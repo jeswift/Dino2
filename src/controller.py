@@ -12,6 +12,7 @@ class Controller:
         pygame.display.set_caption('Dino2')
         self.background = pygame.Surface(self.screen.get_size()).convert()
         self.state = "MAINMENU"
+        self.player = dino.Dino((50,400), )
         self.won = False
         self.obstacle = pygame.sprite.Group()
         self.coins = pygame.sprite.Group()
@@ -88,4 +89,3 @@ class Controller:
 
     def gameLoop(self):
         while self.state == "DINOGAME"
-            

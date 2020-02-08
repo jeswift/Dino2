@@ -2,7 +2,7 @@ import pygame
 
 
 class Dino(pygame.sprite.Sprite)
-    def __init__(self, position, images, width, height):
+    def __init__(self, position, images_norm, images_down, width, height):
         """
         initializes the dino class that we use for our main player
         args: name: string, position: tuple (x,y), images: list containing string names of images, skill: int, width: int, height: int
@@ -10,9 +10,9 @@ class Dino(pygame.sprite.Sprite)
         """
         pygame.sprite.Sprite.__init__(self)
         self.power_up_state = "None"
-        self.all_images = [pygame.transform.smoothscale(pygame.image.load(picture), (width, height)) for picture in images]
-        self.images_down = [pygame.transform.smoothscale(pygame.image.load(picture), (width, height)) for picture in images]
-        self.images_right = [pygame.transform.flip(image, True, False) for image in self.images_left]
+        self.all_images = []
+        self.images_norm = [pygame.transform.smoothscale(pygame.image.load(picture), (width, height)) for picture in images_norm]
+        self.images_down = [pygame.transform.smoothscale(pygame.image.load(picture), (width, height)) for picture in images_down]
         self.image_index = 0
         self.image = self.all_images[self.image_index]
         self.rect = self.image.get_rect()
