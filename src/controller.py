@@ -218,7 +218,6 @@ class Controller:
 			if (jumping == True) and (deltaJumpTime <= .7) and (storedJumpClock != deltaJumpTime):
 				storedJumpClock = deltaJumpTime
 				updateRects.append(pygame.Rect(xloc,yloc,80,85))
-				print(deltaJumpTime)
 				if(deltaJumpTime <= .35):
 					self.player.rect.y -= self.player.speed
 				elif .69 >= deltaJumpTime > .35:
