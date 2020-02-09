@@ -15,7 +15,6 @@ class Controller:
         self.player = dino.Dino((50,400), )
         self.won = False
         self.obstacle = pygame.sprite.Group()
-        self.coins = pygame.sprite.Group()
         self.buttons = pygame.sprite.Group()
 
 
@@ -36,22 +35,17 @@ class Controller:
 
 
     def mainMenuLoop(self):
-        """
-        Displays the main menu screen. Blitz the background image, Fish Fun, skill level, and buttons.
-        Calls button methods based on mouse position for changing button images
-        args: None
-        returns: None
-        """
-
-        """ MAIN MENU BUTTONS ADD HERE
-
-        self.coin_button = button.Button((650, 10), "assets/buttons/catchcoins1.png", "assets/buttons/catchcoins2.png", "assets/buttons/catchcoins3.png")
-        self.obstacle_button = button.Button((650, 130), "assets/buttons/obstacle1.png", "assets/buttons/obstacle2.png", "assets/buttons/obstacle3.png")
-        self.race_button = button.Button((650, 250), "assets/buttons/race1.png", "assets/buttons/race2.png", "assets/buttons/race3.png")"""
+        
+		self.desert_button = button.Button((25, 40), "assets/buttons/DesertButton.png", "assets/buttons/DesertButtonPressed.png", 150, 80)
+        self.jungle_button = button.Button((25, 160), "assets/buttons/JungleButton.png", "assets/buttons/JungleButtonPressed.png", 150, 80)
+        self.water_button = button.Button((25, 280), "assets/buttons/WaterButton.png", "assets/buttons/WaterButtonPressed.png", 150, 80)
+        self.bing_button = button.Button((25, 300), "assets/buttons/BingButton.png", "assets/buttons/BingButtonPressed.png", 150, 80)
+		
 
         while self.state == "MAINMENU":
-            self.highscores_button = button.Button((650, 370), "assets/buttons/highscores.png", "assets/buttons/highscores2.png", "assets/buttons/highscores3.png")
-            MousePosition = pygame.mouse.get_pos()
+            
+			
+			MousePosition = pygame.mouse.get_pos()
             self.coin_button.hoveredOn(MousePosition)
             self.obstacle_button.hoveredOn(MousePosition)
             self.race_button.hoveredOn(MousePosition)

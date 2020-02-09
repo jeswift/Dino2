@@ -9,7 +9,6 @@ class Dino(pygame.sprite.Sprite)
         return: None
         """
         pygame.sprite.Sprite.__init__(self)
-        self.power_up_state = "None"
         self.all_images = []
         self.images_norm = [pygame.transform.smoothscale(pygame.image.load(picture), (width, height)) for picture in images_norm]
         self.images_down = [pygame.transform.smoothscale(pygame.image.load(picture), (width, height)) for picture in images_down]
@@ -18,7 +17,7 @@ class Dino(pygame.sprite.Sprite)
         self.rect = self.image.get_rect()
         self.rect.x = position[0]
         self.rect.y = position[1]
-        self.direction = "right"
+        self.direction = "norm"
 
 
         def update(self):
@@ -27,8 +26,8 @@ class Dino(pygame.sprite.Sprite)
             args: None
             Return: None
             """
-            if self.direction == "right":
-                self.all_images = self.images_right
+            if self.direction == "norm":
+                self.all_images = self.images_norm
             elif self.direction == "down":
                 self.all_images = self.images_down
 
@@ -38,5 +37,3 @@ class Dino(pygame.sprite.Sprite)
             if self.image_index == (len(self.all_images) - 1):
                 self.image_index = 0
 
-        #    if self.racing:
-        #        self.rect.x += self.speed
