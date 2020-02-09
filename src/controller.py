@@ -131,8 +131,8 @@ class Controller:
 			self.screen.blit(BackGround.image, BackGround.rect)
 			self.player = dino.Dino((50,350), ["assets/Dinos/BingDino1.png","assets/Dinos/BingDino2.png","assets/Dinos/BingDino3.png"], \
 			["assets/OG Dino Sprites/duckDino1.png","assets/OG Dino Sprites/duckDino2.png"], 80, 85)
-			floorIMG = "assets/BingDino/DinoFloor.png"
-			Dinolist = ["assets/BingDino/Clam.png","assets/BingDino/Starfish.png","assets/BingDino/SeaWeed.png", "assets/BingDino/Skull.png"]
+			floorIMG = "assets/BingDino/BingFloor.png"
+			Dinolist = ["assets/BingDino/Bus.png","assets/BingDino/Plow.png","assets/BingDino/Bartle.png", "assets/BingDino/Baxter.png"]
 		
 		
 		pygame.display.flip()
