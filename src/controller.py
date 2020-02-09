@@ -100,7 +100,7 @@ class Controller:
 		
 		if self.env_state == "JUNGLE":
 			self.screen.blit(self.background, (0,0))
-			BackGround = background_image.Background('assets/JungleBackGround.png')
+			BackGround = background_image.Background('assets/JungleBackGround.jpg')
 			self.screen.blit(BackGround.image, BackGround.rect)
 			self.player = dino.Dino((50,350), ["assets/Dinos/JungleDino1.png","assets/Dinos/JungleDino2.png","assets/Dinos/JungleDino3.png"], \
 			["assets/OG Dino Sprites/duckDino1.png","assets/OG Dino Sprites/duckDino2.png"], 80, 85)
@@ -163,7 +163,7 @@ class Controller:
 				if event.type == pygame.QUIT:
 					sys.exit()
 				if event.type == pygame.KEYDOWN:
-					if(event.key == pygame.K_UP and self.player.rect.y >= 350):
+					if(event.key == pygame.K_UP and self.player.rect.y >= 340):
 						jumpClock1 = time.clock()
 						jumping = True
 						
